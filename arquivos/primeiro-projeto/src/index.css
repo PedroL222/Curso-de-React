@@ -1,0 +1,13 @@
+body {
+  display: flex;
+  background-color: aqua;
+}
+
+h1{
+  color: brown;
+}
+
+p{
+  background-color: blue;
+  padding: 10px;
+}
