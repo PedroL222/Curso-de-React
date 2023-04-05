@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import PropTypes from 'prop-types';
 
 function Form(){
 
@@ -9,8 +10,9 @@ function Form(){
         console.log(`usu ${name} senha ${password}`)
     }
 
-    const [name, setName] = useState("matue");
-    const [password, setPassword] = useState("matue")
+    const [name, setName] = useState("Nome");
+    const [password, setPassword] = useState("");
+    const [idade, setIdade] = useState("Idade");
 
     return(
         <form onSubmit={cadUsu}>
@@ -31,13 +33,28 @@ function Form(){
                 id="password" 
                 name="password" 
                 placeholder = "Sua senha..." 
+                value={password}
                 onChange={(e)=>setPassword(e.target.value)}/>
+            </div>
+            <div>
+                <input 
+                type="text" 
+                id="idade" 
+                name="idade" 
+                placeholder = "Sua idade..." 
+                value={idade}
+                onChange={(e)=>setIdade(e.target.value)}
+                />
             </div>
             <div>
                 <input type="submit" value="Enviar"/>
             </div>
         </form>
     )
+}
+
+Form.prototype = {
+    password: PropTypes.number.isRequired,
 }
 
 export default Form
